@@ -13,6 +13,8 @@ function App() {
   useEffect( () => {
     // Create a function to make API call, returning our json response
   const getRecipes = async () => {
+    const appId = `2e78a96e`;
+    const apiKey = `8ddc103305cb9fc9e1b06b55de4db3d1`;
     const response = await fetch(`https://api.edamam.com/search?q=${search}&app_id=${appId}&app_key=${apiKey}&health=vegetarian&health=vegan`);
     const data = await response.json();
     setRecipes(data.hits);
@@ -20,10 +22,6 @@ function App() {
     setSearch();
     getRecipes();
   }, [search])
-
-  // Global declarations to provide for API call
-  const appId = `2e78a96e`;
-  const apiKey = `8ddc103305cb9fc9e1b06b55de4db3d1`;
 
   const userSearch = (e) => {
     setUserInput(e.target.value);
