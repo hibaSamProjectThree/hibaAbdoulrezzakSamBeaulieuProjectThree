@@ -8,22 +8,22 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
   const [userInput, setUserInput] = useState('');
-  const [healthLabel, setHealthLabel] = useState('');
+  // const [healthLabel, setHealthLabel] = useState('');
 
   useEffect( () => {
-    getRecipes();
-  }, [])
-
-  // Global declarations to provide for API call
-  const appId = `2e78a96e`;
-  const apiKey = `8ddc103305cb9fc9e1b06b55de4db3d1`;
-    
-  // Create a function to make API call, returning our json response
+    // Create a function to make API call, returning our json response
   const getRecipes = async () => {
     const response = await fetch(`https://api.edamam.com/search?q=${search}&app_id=${appId}&app_key=${apiKey}&health=vegetarian&health=vegan`);
     const data = await response.json();
     setRecipes(data.hits);
   }
+    setSearch();
+    getRecipes();
+  }, [search])
+
+  // Global declarations to provide for API call
+  const appId = `2e78a96e`;
+  const apiKey = `8ddc103305cb9fc9e1b06b55de4db3d1`;
 
   const userSearch = (e) => {
     setUserInput(e.target.value);
