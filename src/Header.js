@@ -1,11 +1,14 @@
-import headerimage from "./assets/headerimage.png"
+import backgroundLogo from './assets/backgroundLogo.png';
 
 
 const Header = () => {
   return (
     <header>
-        <img className="headerImage" src={headerimage} alt="App logo" />
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptate ut quae temporibus, tempora libero? Hic deserunt nisi qui esse porro, aperiam vel ullam facilis ipsum ducimus enim. Quisquam, aperiam.</p>
+      <div className="logoDiv">
+          <img className="headerImage" src={backgroundLogo} alt="App logo" />
+          <h1>Veg Curious</h1>
+        </div>
+      <p>Veg Curious - an app for those interested in incorporating more plant-based meals into their daily, weekly, or monthly schedules!  Blah blah.</p>
     </header>
   )
 }

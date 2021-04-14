@@ -50,10 +50,9 @@ function App() {
 
   return (
     <div className="App">
-   
       <Header />
       <form className="searchBar" onSubmit={onSubmit} action="submit">
-        <label htmlFor="ingredientSearch">Search any ingredient...</label>
+        <label htmlFor="ingredientSearch" className="visuallyHidden">Search any ingredient...</label>
         <input 
         className="inputText" 
         type="text"
@@ -63,37 +62,31 @@ function App() {
         onChange={userSearch}
         />
         <div className="checkboxForm" onChange={handleHealthLabel}>
-          <input type="checkbox" id="vegetarian"
-          name="contact" value="vegetarian"/>
+          <input type="checkbox" id="vegetarian" value="vegetarian"/>
           <label htmlFor="vegetarian">Vegetarian</label>
 
-          <input type="checkbox" id="vegan"
-          name="contact" value="vegan"/>
+          <input type="checkbox" id="vegan" value="vegan"/>
           <label htmlFor="vegan">Vegan</label>
 
-          <input type="checkbox" id="gluten-free"
-          name="contact" value="gluten-free"/>
+          <input type="checkbox" id="gluten-free" value="gluten-free"/>
           <label htmlFor="gluten-free">Gluten-Free</label>
         </div>
         <button>Find Recipes</button>
       </form>
-   
-     <div className="flexContainer">
+
+    <div className="flexContainer">
       { 
-     
-       
         recipes.map( recipe => (
-   
+
           <div className="recipeCard">
             <Recipe
               title={recipe.recipe.label}
               imgSrc={recipe.recipe.image}
               imgAlt={recipe.recipe.label}
+              ingredients={recipe.recipe.ingredients}
               recipeUrl={recipe.recipe.url}
             />
           </div>
-        
-     
         ))
       }
         </div>
