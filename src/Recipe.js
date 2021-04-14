@@ -1,10 +1,12 @@
 const Recipe = (props) => {
   return (
-    <div>
-      <h2>{props.title}</h2>
-      <img src={props.imgSrc} alt={props.imgAlt}/>
-      <a href={props.recipeUrl}>Go to Recipe</a>
-    </div>
+  <div className="outerWrapper">
+
+      <h2 className="recipeLabel">{props.title}</h2>
+      <img className="recipeImage" src={props.imgSrc} alt={props.imgAlt}/>
+      <a className="recipeLink" href ={props.recipeUrl}>Go to Recipe</a>
+   </div> 
+
   )
 }
 

@@ -50,10 +50,12 @@ function App() {
 
   return (
     <div className="App">
+   
       <Header />
       <form className="searchBar" onSubmit={onSubmit} action="submit">
         <label htmlFor="ingredientSearch">Search any ingredient...</label>
-        <input
+        <input 
+        className="inputText" 
         type="text"
         id="ingredientSearch"
         placeholder="Enter ingredient here..."
@@ -75,9 +77,13 @@ function App() {
         </form>
         <button>Find Recipes</button>
       </form>
-
-      {
+   
+     <div className="flexContainer">
+      { 
+     
+       
         recipes.map( recipe => (
+   
           <div className="recipeCard">
             <Recipe
               title={recipe.recipe.label}
@@ -86,8 +92,11 @@ function App() {
               recipeUrl={recipe.recipe.url}
             />
           </div>
+        
+     
         ))
       }
+        </div>
     </div>
   );
 }
