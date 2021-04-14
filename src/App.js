@@ -78,18 +78,20 @@ function App() {
       { 
         recipes.map( recipe => (
 
-          <div className="recipeCard">
             <Recipe
               title={recipe.recipe.label}
               imgSrc={recipe.recipe.image}
               imgAlt={recipe.recipe.label}
               ingredients={recipe.recipe.ingredients}
               recipeUrl={recipe.recipe.url}
-            />
-          </div>
+            /> 
         ))
       }
         </div>
+
+      <footer>
+        <p> Made at Juno </p>
+      </footer>
     </div>
   );
 }
