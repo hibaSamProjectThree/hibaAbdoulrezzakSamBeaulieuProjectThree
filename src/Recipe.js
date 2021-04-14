@@ -1,15 +1,17 @@
 const Recipe = (props) => {
   return (
-  <div className="outerWrapper">
+  <div className="recipeCard">
 
       <h2 className="recipeLabel">{props.title}</h2>
-      <img className="recipeImage" src={props.imgSrc} alt={props.imgAlt}/>
+      <div className="imageContainer">
+        <img className="recipeImage" src={props.imgSrc} alt={props.imgAlt}/>
+      </div>
       <ul>
         {props.ingredients.map(ingredient => (
           <li>{ingredient.text}</li>
         ))}
       </ul>
-      <a href={props.recipeUrl}>Click Here for Full Recipe</a>
+      <a href={props.recipeUrl}>Full Recipe</a>
   </div> 
 
   )
