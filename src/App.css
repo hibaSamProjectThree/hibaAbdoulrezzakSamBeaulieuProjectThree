@@ -236,17 +236,17 @@ body {
 }
 
 img { 
-  width: 100%;
-  height: auto;
-  display: block;
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
 header {
-background-color: #00C266;
-display: flex;
-height: 50vh;
-display: flex;
-justify-content: space-evenly;
+	background-color: #00C266;
+	display: flex;
+	height: 70vh;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 h1 {
@@ -287,23 +287,60 @@ input[type=checkbox] {
 }
 
 .flexContainer {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
 }
 
 .recipeCard {
-	width: 40%;
+  width: calc(50% -2rem);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 1rem;
+  color: #FFF;
   background-color: #00C266;
   justify-content: center;
   align-items: center;
+  flex-basis: auto;
+}
+
+.recipeImage {
+	border-radius: 50%;
+	width: 100%;
+	object-fit: contain;
+
 }
 
 .recipeLabel {
-  max-width: 200px;
   text-align: center;
   margin: 12px 0px;
-
 }
+
+a, 
+button {
+	text-decoration: none;
+	color: #FFF;
+	background-color: #00592f;
+	border-radius: 0.3rem; 
+	text-align: center;
+	padding: 0.5rem;
+}
+
+a:hover, 
+a:focus, 
+button:hover,
+button:focus {
+	/* border: 2px solid #;
+	background: #;
+	box-shadow: 10px 10px 5px #aaaaaa; */
+	background-color: #FFF;
+	/* box-shadow: 0px 15px 20px ; */
+	color: #00592f;
+  }
+
+  footer {
+	  color: #FFF;
+	  background-color: #00592f;
+	  text-align: center;
+  }
