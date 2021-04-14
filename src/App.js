@@ -62,7 +62,7 @@ function App() {
         value={userInput}
         onChange={userSearch}
         />
-        <form className="checkboxForm" onChange={handleHealthLabel}>
+        <div className="checkboxForm" onChange={handleHealthLabel}>
           <input type="checkbox" id="vegetarian"
           name="contact" value="vegetarian"/>
           <label htmlFor="vegetarian">Vegetarian</label>
@@ -74,7 +74,7 @@ function App() {
           <input type="checkbox" id="gluten-free"
           name="contact" value="gluten-free"/>
           <label htmlFor="gluten-free">Gluten-Free</label>
-        </form>
+        </div>
         <button>Find Recipes</button>
       </form>
    
