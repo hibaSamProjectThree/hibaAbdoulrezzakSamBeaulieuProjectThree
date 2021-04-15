@@ -318,7 +318,7 @@ input[type=checkbox] {
 }
 
 .recipeCard {
-  width: calc(50% -2rem);
+  width: 95%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -436,6 +436,10 @@ button:focus {
 		.wrapper {
 			max-width: 400px;
 			width: 95%;
+		}
+
+		h1 {
+			margin-bottom: 1rem;
 		}
 
 		.checkboxForm {
