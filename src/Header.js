@@ -11,10 +11,10 @@ const Header = () => {
             <h1>Veg Curious</h1>
           </div>
           <div className="headerText">
-            <h2>Veg Curious (noun)</h2>
+            <h2>Veg Curious</h2>
             <ol>
-              <li>Someone who is interested in eating more plant-based food, or considering going vegetarian/vegan</li>
-              <li>An app that makes searching for plant-based recipes easy and stress-free!</li>
+              <li>(adjective) Interested in eating more plant-based food </li>
+              <li>(noun) An app that makes searching for plant-based recipes easy and stress-free!</li>
             </ol>
           </div>
         </div>
