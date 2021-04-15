@@ -29,14 +29,15 @@ function App() {
     })
     .then( (res) => {
       setRecipes(res.data.hits);
-      console.log(res.data.hits);
     })
   }
 
+  // function to track user's entry in search bar
   const userSearch = (e) => {
     setUserInput(e.target.value);
   }
 
+  // event handler for user pressing submit button
   const onSubmit = e => {
     e.preventDefault(); 
     setUserInput(search);
@@ -44,6 +45,7 @@ function App() {
     setSearch('');
   }
 
+  // A function to toggle user's selection for health labels (ie: veg, vegan, gluten-free...)
   const handleHealthLabel = (e) => {
     setHealthLabel(e.target.value);
   }
@@ -51,46 +53,55 @@ function App() {
   return (
     <div className="App">
       <Header />
+        
       <form className="searchBar" onSubmit={onSubmit} action="submit">
-        <label htmlFor="ingredientSearch" className="visuallyHidden">Search any ingredient...</label>
-        <input 
-        className="inputText" 
-        type="text"
-        id="ingredientSearch"
-        placeholder="Enter ingredient here..."
-        value={userInput}
-        onChange={userSearch}
-        />
-        <div className="checkboxForm" onChange={handleHealthLabel}>
-          <input type="checkbox" id="vegetarian" value="vegetarian"/>
-          <label htmlFor="vegetarian">Vegetarian</label>
-
-          <input type="checkbox" id="vegan" value="vegan"/>
-          <label htmlFor="vegan">Vegan</label>
-
-          <input type="checkbox" id="gluten-free" value="gluten-free"/>
-          <label htmlFor="gluten-free">Gluten-Free</label>
+        <div className="wrapper">
+          <label htmlFor="ingredientSearch" className="visuallyHidden">Search any ingredient...</label>
+          <input 
+          className="inputText" 
+          type="text"
+          id="ingredientSearch"
+          placeholder="Enter ingredient or recipe here..."
+          value={userInput}
+          onChange={userSearch}
+          />
+          <div className="checkboxForm" onChange={handleHealthLabel}>
+            <div>
+              <input type="checkbox" id="vegetarian" value="vegetarian"/>
+              <label htmlFor="vegetarian">Vegetarian</label>
+            </div>
+            <div>
+              <input type="checkbox" id="vegan" value="vegan"/>
+              <label htmlFor="vegan">Vegan</label>
+            </div>
+            <div>
+              <input type="checkbox" id="gluten-free" value="gluten-free"/>
+              <label htmlFor="gluten-free">Gluten-Free</label>
+            </div>
+          </div>
+          <button>Find Recipes</button>
         </div>
-        <button>Find Recipes</button>
       </form>
 
-    <div className="flexContainer">
-      { 
-        recipes.map( recipe => (
+      <section className="recipes">
+        <div className="wrapper">
+          <div className="gridContainer">
+            { 
+              recipes.map( recipe => (
 
-            <Recipe
-              title={recipe.recipe.label}
-              imgSrc={recipe.recipe.image}
-              imgAlt={recipe.recipe.label}
-              ingredients={recipe.recipe.ingredients}
-              recipeUrl={recipe.recipe.url}
-            /> 
-        ))
-      }
+                <Recipe
+                  title={recipe.recipe.label}
+                  imgSrc={recipe.recipe.image}
+                  imgAlt={recipe.recipe.label}
+                  recipeUrl={recipe.recipe.url}
+                  /> 
+              ))
+            }
+          </div>
         </div>
-
+      </section>
       <footer>
-        <p> Made at Juno </p>
+        <p> Made at <a href="https://junocollege.com/" className="footerLink">Juno College ©</a> 2021 with the <a href="https://www.edamam.com/" className="footerLink">Edamam API</a></p>
       </footer>
     </div>
   );
